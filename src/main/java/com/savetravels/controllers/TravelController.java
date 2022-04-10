@@ -29,21 +29,22 @@ public class TravelController {
 	}
 	
 	@GetMapping("/expenses")
-	public String newExpense (@ModelAttribute("expense") Expense expense, Model model) {
+	public String index (@ModelAttribute("expense") Expense expense, Model model) {
 		List<Expense> expenses = expenseService.allExpenses();
 		model.addAttribute("expenses", expenses);
 		return "index.jsp";
 	}
 	
-	@PostMapping("/expenses")
+	@PostMapping("/create/expenses")
 	public String index(@Valid @ModelAttribute("expense")Expense expense, BindingResult result, Model model) {
 		
 		if(result.hasErrors()) {
+			System.out.println(expense.getExpenseName());
 			List<Expense> expenses = expenseService.allExpenses();
 			model.addAttribute("expenses", expenses);
 			return "index.jsp";
-		} else {
-			expenseService.createExpense(expense);
+		}else {
+			Expense thisexpense = expenseService.createExpense(expense);
 			return "redirect:/expenses";
 		}
 		

@@ -26,7 +26,7 @@ public class Expense {
     
 	@NotNull
     @Size(min = 5, max = 200, message="Name must not be blank")
-    private String expense;
+    private String expenseName;
     
 	@NotNull
     @Size(min = 5, max = 200, message="Please list a Vendor")
@@ -38,7 +38,7 @@ public class Expense {
     
 	@NotNull
     @Min(value=0, message="Amount must be greater than zero")
-    private Integer amount;
+    private Double amount;
     
     @Column(updatable=false)
     @DateTimeFormat(pattern="yyyy-MM-dd")
@@ -51,12 +51,12 @@ public class Expense {
     	
     }
     
-    public Expense(String expense, String vendor, String description, int amount) {
-    	this.expense = expense;
-    	this.vendor = vendor;
-    	this.description = description;
-    	this.amount = amount;
-    }
+//    public Expense(String expense, String vendor, String description, Double amount) {
+//    	this.expenseName = expense;
+//    	this.vendor = vendor;
+//    	this.description = description;
+//    	this.amount = amount;
+//    }
 
 	public Long getId() {
 		return id;
@@ -66,12 +66,14 @@ public class Expense {
 		this.id = id;
 	}
 
-	public String getExpense() {
-		return expense;
+	
+
+	public String getExpenseName() {
+		return expenseName;
 	}
 
-	public void setExpense(String expense) {
-		this.expense = expense;
+	public void setExpenseName(String expenseName) {
+		this.expenseName = expenseName;
 	}
 
 	public String getVendor() {
@@ -90,11 +92,11 @@ public class Expense {
 		this.description = description;
 	}
 
-	public Integer getAmount() {
+	public Double getAmount() {
 		return amount;
 	}
 
-	public void setAmount(Integer amount) {
+	public void setAmount(Double amount) {
 		this.amount = amount;
 	}
 

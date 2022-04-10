@@ -25,7 +25,7 @@
 			<tbody>
 				<c:forEach var="expense" items="${expenses}">
 				<tr>
-					<td><c:out value="${expense.expense}"></c:out></td>
+					<td><c:out value="${expense.expenseName}"></c:out></td>
 					<td><c:out value="${expense.vendor}"></c:out></td>
 					<td><c:out value="${expense.amount}"></c:out></td>
 				</c:forEach>
@@ -35,12 +35,12 @@
 	<h2>Add an Expense :</h2>
 	<p>Description must not be blank</p>
 	<div class="container-sm">
-		<form:form action ="/expenses" method="post" modelAttribute="expense">
+		<form:form action ="/create/expenses" method="post" modelAttribute="expense">
 			
 				<div>
-			        <form:label path="expense">Expense</form:label>
-			        <form:errors path="expense"/>
-			        <form:input path="expense"/>
+			        <form:label path="expenseName">Expense</form:label>
+			        <form:errors path="expenseName"/>
+			        <form:input path="expenseName"/>
 			    </div>
 			    
 				<div>
@@ -54,6 +54,12 @@
 			        <form:errors path="amount"/>
 			        <form:input path="amount"/>
 			    </div>
+			    <div>
+			        <form:label path="description">Description</form:label>
+			        <form:errors path="description"/>
+			        <form:input path="description"/>
+			    </div>
+			    
 			    <input type="submit" value="Submit"/>
 			
 		</form:form>
