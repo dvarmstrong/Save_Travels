@@ -33,11 +33,14 @@
 			<scope>runtime</scope>
 			<optional>true</optional>
 		</dependency>
+		<!-- SQL -->
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<scope>runtime</scope>
 		</dependency>
+		
+		<!-- added -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-tomcat</artifactId>
@@ -56,6 +59,7 @@
                 <groupId>javax.servlet</groupId>
                 <artifactId>jstl</artifactId>
         </dependency>
+        <!-- BootStrap and jquery -->
         <dependency>
 	        <groupId>org.webjars</groupId>
 	        <artifactId>webjars-locator</artifactId>
@@ -71,6 +75,7 @@
 	        <artifactId>jquery</artifactId>
 	        <version>3.6.0</version>
     	</dependency>
+    	<!-- validations -->
     	<dependency>
 	        <groupId>org.springframework.boot</groupId>
 	        <artifactId>spring-boot-starter-validation</artifactId>

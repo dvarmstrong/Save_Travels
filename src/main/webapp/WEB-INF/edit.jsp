@@ -11,6 +11,7 @@
 </head>
 <body>
 		<h2>Edit an Expense :</h2>
+		<a href="/">Go Back</a>
 	<p>Description must not be blank</p>
 	<div class="container-sm">
 		<form:form action ="/edit/${expense.id}" method="post" modelAttribute="expense">
