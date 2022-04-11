@@ -1,42 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page isErrorPage="true" %>    
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>   
-
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Save Travels</title>
-<link rel="stylesheet" type="text/css" href="/css/style.css">
-<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
+<title>Insert title here</title>
 </head>
 <body>
-	<h1>Save Travels</h1>
-	<div class="container-sm">
-		<table class="table table-striped table-bordered">
-			<thead>
-				<tr>
-					<th>Expense</th>
-					<th>Vendor</th>
-					<th>Amount</th>
-				</tr>
-			</thead>
-			<tbody>
-				<c:forEach var="expense" items="${expenses}">
-				<tr>
-					<td><c:out value="${expense.expenseName}">Edit</c:out></td>
-					<td><c:out value="${expense.vendor}"></c:out></td>
-					<td><c:out value="${expense.amount}"></c:out></td>
-					<td><a href="/edit/${expense.id}">Edit</a></td>
-				</c:forEach>
-			</tbody>
-		</table>
-	</div>
-	<h2>Add an Expense :</h2>
+		<h2>Edit an Expense :</h2>
 	<p>Description must not be blank</p>
 	<div class="container-sm">
-		<form:form action ="/create/expenses" method="post" modelAttribute="expense">
+		<form:form action ="/edit/${expense.id}" method="post" modelAttribute="expense">
+			<input type="hidden" name="_method" value="put">
 			
 				<div>
 			        <form:label path="expenseName">Expense</form:label>
@@ -65,13 +43,5 @@
 			
 		</form:form>
 	</div>
-	
-	
-	
-	
-	
-		
-		
-		
 </body>
 </html>

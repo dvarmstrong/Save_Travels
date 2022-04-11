@@ -33,6 +33,10 @@ public class ExpenseService {
 		
 	}
 	
+	public Expense update(Expense b ) {
+		return expenseRepo.save(b);
+	}
+	
 	// retrieves an expense  
 	public Expense findExpense(Long id) {
 		Optional<Expense> optionalExpense = expenseRepo.findById(id);
